@@ -24,7 +24,7 @@ function setupEventListeners() {
     });
 
     // Step 1: Outcome Type
-    const outcomeButtons = document.querySelectorAll('#screen-outcome-type .option-btn');
+    const outcomeButtons = document.querySelectorAll('#screen-outcome-type .option-card');
     outcomeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             state.outcome_type = btn.dataset.value;

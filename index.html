@@ -49,13 +49,102 @@
         <div id="screen-outcome-type" class="screen">
             <div class="question-container">
                 <h2>¿Qué quiere obtener de sus datos?</h2>
-                <div class="options">
-                    <button class="option-btn" data-value="number">Predecir un valor numérico</button>
-                    <button class="option-btn" data-value="category">Predecir una categoría</button>
-                    <button class="option-btn" data-value="groups">Descubrir grupos o segmentos</button>
-                    <button class="option-btn" data-value="time">Predecir valores en el tiempo</button>
-                    <button class="option-btn" data-value="ranking">Ordenar o recomendar elementos</button>
-                    <button class="option-btn" data-value="unknown">No estoy seguro</button>
+                <div class="options-grid">
+                    <!-- 1. Regression -->
+                    <button class="option-card" data-value="number">
+                        <div class="card-icon icon-orange">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M19 9L14 14L10 10L7 13" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>Predecir un valor numérico</h3>
+                            <p>Obtenga estimaciones de resultados continuos como ventas, precios o temperaturas.</p>
+                        </div>
+                    </button>
+
+                    <!-- 2. Classification -->
+                    <button class="option-card" data-value="category">
+                        <div class="card-icon icon-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2" />
+                                <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2" />
+                                <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M3 14H10V21H3V14Z" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>Predecir una categoría</h3>
+                            <p>Clasifique datos en grupos definidos como retención de clientes, fraude o diagnósticos.
+                            </p>
+                        </div>
+                    </button>
+
+                    <!-- 3. Clustering -->
+                    <button class="option-card" data-value="groups">
+                        <div class="card-icon icon-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                <circle cx="19" cy="5" r="2" stroke="currentColor" stroke-width="2" />
+                                <circle cx="5" cy="19" r="2" stroke="currentColor" stroke-width="2" />
+                                <path d="M7 17L10 14" stroke="currentColor" stroke-width="1.5" />
+                                <path d="M17 7L14 10" stroke="currentColor" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>Encontrar patrones o grupos</h3>
+                            <p>Descubra estructuras ocultas, segmentaciones y anomalías sin etiquetas predefinidas.</p>
+                        </div>
+                    </button>
+
+                    <!-- 4. Time Series -->
+                    <button class="option-card" data-value="time">
+                        <div class="card-icon icon-cyan">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>Predecir valores en el tiempo</h3>
+                            <p>Pronostique tendencias, demanda o comportamientos futuros basados en históricos.</p>
+                        </div>
+                    </button>
+
+                    <!-- 5. Ranking -->
+                    <button class="option-card" data-value="ranking">
+                        <div class="card-icon icon-yellow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>Ordenar o recomendar</h3>
+                            <p>Genere sistemas de recomendación, personalización o rankings de relevancia.</p>
+                        </div>
+                    </button>
+
+                    <!-- 6. Unknown -->
+                    <button class="option-card" data-value="unknown">
+                        <div class="card-icon icon-slate">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-svg">
+                                <path
+                                    d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3>No estoy seguro</h3>
+                            <p>Ayúdeme a definir mi problema respondiendo unas preguntas clave sobre los datos.</p>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
