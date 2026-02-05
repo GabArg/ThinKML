@@ -195,71 +195,113 @@ h3 {
     margin-bottom: 1rem;
 }
 
-/* Interactive Form Elements - Sub-Cards */
+/* Interactive Form Elements - Clean Glass */
 .form-group {
-    margin-bottom: 1.5rem;
-    background: rgba(255, 255, 255, 0.4);
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    margin-bottom: 2rem;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
 .form-group label {
+    display: block;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-text-primary);
     margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 .radio-group,
 .checkbox-group {
-    display: flex;
-    /* Flex for pill row logic if needed, but grid is safer for responsiveness */
     display: grid;
-    gap: 0.75rem;
+    gap: 1rem;
+    /* Responsive Grid Logic */
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 
-/* Custom Controls - Pill Shaped */
+/* Premium Tile Controls (Replacing Pills) */
 .radio-label,
 .checkbox-label {
-    padding: 0.75rem 1rem;
-    border-radius: 50px;
-    /* Pill shape */
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* Center content */
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
 }
 
+/* Hover State */
 .radio-label:hover,
 .checkbox-label:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.15);
-    /* Blue glow */
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hide Default Input */
+.radio-label input,
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Selected State - The "Active" Glow */
+.radio-label:has(input:checked),
+.checkbox-label:has(input:checked) {
+    background: rgba(255, 255, 255, 0.9);
     border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow), 0 8px 25px rgba(59, 130, 246, 0.25);
+    transform: translateY(-2px);
+    color: var(--color-accent);
 }
 
 .radio-label span,
 .checkbox-label span {
-    margin-left: 0.5rem;
-    /* Tighter for pills */
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+    z-index: 2;
 }
 
-/* Custom Indicators (Hide for sleek look? No, keep for clarity but minimal) */
-/* Moving indicator to left but minimal */
+/* Optional: Add a subtle checkmark indicator for selected state */
+.radio-label:has(input:checked)::after,
+.checkbox-label:has(input:checked)::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Make text centered and remove old margins */
+.radio-label span,
+.checkbox-label span {
+    margin-left: 0;
+}
+
+/* Hide Pseudo-elements from old design */
 .radio-label::before,
 .checkbox-label::before {
-    left: 0.75rem;
-}
-
-.radio-label span,
-.checkbox-label span {
-    margin-left: 2rem;
+    display: none;
 }
 
 
