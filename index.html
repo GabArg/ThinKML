@@ -16,9 +16,7 @@
 <body>
     <div class="background-mesh"></div>
     <div class="container">
-        <div class="progress-bar-container">
-            <div id="progress-bar" class="progress-bar-fill"></div>
-        </div>
+
         <header>
             <h1>ThinkML</h1>
             <p class="subtitle">Asistente para definir el enfoque de modelado</p>
@@ -48,6 +46,9 @@
         <!-- Step 1: Outcome Type -->
         <div id="screen-outcome-type" class="screen">
             <div class="question-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <h2>¿Qué quiere obtener de sus datos?</h2>
                 <div class="options-grid">
                     <!-- 1. Regression -->
@@ -152,6 +153,9 @@
         <!-- Clarifying screen for "I don't know" -->
         <div id="screen-clarify-target" class="screen">
             <div class="question-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <h2>¿Conoce la variable objetivo?</h2>
                 <p class="helper-text">La variable objetivo es el valor que desea predecir o entender.</p>
                 <div class="options">
@@ -164,6 +168,9 @@
         <!-- Step 2: Decision Context -->
         <div id="screen-decision-context" class="screen">
             <div class="question-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <h2>¿Cómo se utilizará el resultado?</h2>
                 <div class="options">
                     <button class="option-btn" data-value="human">Análisis humano</button>
@@ -176,6 +183,9 @@
         <!-- Step 3: Cost of Error -->
         <div id="screen-cost-error" class="screen">
             <div class="question-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <h2>Si el modelo se equivoca, ¿qué ocurre?</h2>
                 <div class="options">
                     <button class="option-btn" data-value="low">Sin impacto relevante</button>
@@ -188,6 +198,9 @@
         <!-- Step 4: Data Situation -->
         <div id="screen-data-situation" class="screen">
             <div class="question-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <h2>Situación de los datos</h2>
 
                 <div class="form-group">

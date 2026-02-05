@@ -121,11 +121,14 @@ function showScreen(screenId) {
     };
 
     const progress = progressMap[screenId] || 0;
-    const bar = document.getElementById('progress-bar');
+    // Updated: Select bar inside the active screen
+    const bar = document.querySelector(`#${screenId} .progress-bar-fill`);
+
     if (bar) {
-        bar.style.width = `${progress}%`;
-        // Hide bar on landing
-        bar.parentElement.style.opacity = screenId === 'screen-landing' ? '0' : '1';
+        // Build-in a small delay if switching screens to allow transition
+        setTimeout(() => {
+            bar.style.width = `${progress}%`;
+        }, 50);
     }
 }
 
