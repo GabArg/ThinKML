@@ -6,7 +6,7 @@
 ![Version](https://img.shields.io/badge/Versión-1.0.0-blue)
 ![License](https://img.shields.io/badge/Licencia-MIT-lightgrey)
 
-Herramienta orientada a estructurar decisiones de modelado en proyectos reales de datos.
+"La mayoría de los proyectos de Machine Learning fallan antes de comenzar: el problema está mal definido. ThinkML fue creado para estructurar esa etapa previa al modelado."
 
 ## Demo en vivo
 [Ver Demo (GitHub Pages)](https://gabarg.github.io/ThinKML/)
@@ -15,9 +15,11 @@ Herramienta orientada a estructurar decisiones de modelado en proyectos reales d
 
 ## Propósito
 
-Muchos proyectos de machine learning fallan no por limitaciones algorítmicas, sino por una definición deficiente del problema. **ThinkML** estructura el razonamiento crítico necesario para alinear objetivos de negocio con la estrategia técnica adecuada.
+ThinkML estructura el razonamiento crítico necesario para alinear objetivos de negocio con la estrategia técnica adecuada. No ejecuta modelos; organiza el planteo del problema antes de la implementación.
 
-Esta herramienta no ejecuta modelos; organiza el pensamiento previo a la implementación.
+## Enfoque
+
+El sistema utiliza reglas deterministas para mapear características del problema a estrategias de modelado, evaluación y validación.
 
 ## Capacidades
 
@@ -28,12 +30,21 @@ Esta herramienta no ejecuta modelos; organiza el pensamiento previo a la impleme
 | **Análisis de Riesgos** | Detecta posibles puntos de fallo (estacionalidad, desbalance, leakage) antes de escribir código. |
 | **Plan de Acción** | Genera una lista de verificación determinística para la etapa de implementación. |
 
-## En qué contexto es útil
+## Contexto profesional
 
-*   **Definición inicial de proyectos de datos**: Para alinear expectativas entre stakeholders y equipo técnico.
-*   **Entrevistas técnicas**: Como marco de referencia para evaluar capacidad de planteo de problemas.
-*   **Discusiones de estrategia analítica**: Para validar hipótesis antes de invertir recursos en desarrollo.
-*   **Validación de enfoque antes de implementar**: Checklist de seguridad para evitar errores conceptuales costosos.
+*   Definición inicial de alcance del modelo
+*   Selección de métricas adecuadas
+*   Discusión técnica previa con stakeholders
+*   Preparación para entrevistas técnicas
+
+## Qué NO es ThinkML
+
+Es fundamental entender el alcance de la herramienta:
+
+- No es AutoML
+- No carga datasets
+- No entrena modelos
+- **No reemplaza criterio profesional**
 
 ## Estructura del Proyecto
 
