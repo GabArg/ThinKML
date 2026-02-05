@@ -6,6 +6,8 @@
 ![Version](https://img.shields.io/badge/Versión-1.0.0-blue)
 ![License](https://img.shields.io/badge/Licencia-MIT-lightgrey)
 
+![ThinkML screenshot](docs/thinkml-preview.png)
+
 > *"La mayoría de los proyectos de Machine Learning fallan antes de comenzar: el problema está mal definido."*
 
 Antes de elegir algoritmos, hiperparámetros o librerías, es necesario responder preguntas más básicas: **qué tipo de problema es, cómo se evaluará y qué riesgos implica.**
