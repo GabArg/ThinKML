@@ -12,6 +12,14 @@ qué tipo de problema es, cómo se evaluará y qué riesgos implica.
 
 ThinkML fue creado para estructurar esa etapa previa al modelado.
 
+## Qué problemas evita
+
+* Elegir métricas incorrectas
+* Intentar modelar sin variable objetivo clara
+* Usar validaciones inadecuadas
+* Aplicar modelos complejos sin necesidad
+* Confundir correlación con capacidad predictiva
+
 ## Qué es
 ThinkML es una herramienta interactiva que guía el razonamiento necesario para identificar el enfoque de modelado adecuado antes de escribir código.
 
