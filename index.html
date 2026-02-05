@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkML — Asistente de razonamiento para problemas de datos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>ThinkML</h1>
+            <p class="subtitle">Asistente para definir el enfoque de modelado</p>
+        </header>
+
+        <!-- Landing Screen -->
+        <div id="screen-landing" class="screen active">
+            <div class="landing-container">
+                <h2>ThinkML</h2>
+                <p class="landing-subtitle">Asistente para definir el enfoque de modelado</p>
+                <p class="landing-target">Diseñado para analistas de datos, estudiantes y equipos que definen una
+                    estrategia de modelado.</p>
+
+                <ul class="landing-features">
+                    <li>Un asistente estructurado para identificar el enfoque de modelado correcto antes de escribir
+                        código.</li>
+                    <li>Sugiere estrategias de modelado y métricas</li>
+                    <li>Identifica riesgos antes de la implementación</li>
+                </ul>
+
+                <button id="btn-start-diagnosis" class="continue-btn">Iniciar análisis del problema</button>
+
+                <p class="landing-disclaimer">Sin carga de datos. Sin ejecución de modelos. Razonamiento puro.</p>
+            </div>
+        </div>
+
+        <!-- Step 1: Outcome Type -->
+        <div id="screen-outcome-type" class="screen">
+            <div class="question-container">
+                <h2>¿Qué quiere obtener de sus datos?</h2>
+                <div class="options">
+                    <button class="option-btn" data-value="number">Predecir un valor numérico</button>
+                    <button class="option-btn" data-value="category">Predecir una categoría</button>
+                    <button class="option-btn" data-value="groups">Descubrir grupos o segmentos</button>
+                    <button class="option-btn" data-value="time">Predecir valores en el tiempo</button>
+                    <button class="option-btn" data-value="ranking">Ordenar o recomendar elementos</button>
+                    <button class="option-btn" data-value="unknown">No estoy seguro</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clarifying screen for "I don't know" -->
+        <div id="screen-clarify-target" class="screen">
+            <div class="question-container">
+                <h2>¿Conoce la variable objetivo?</h2>
+                <p class="helper-text">La variable objetivo es el valor que desea predecir o entender.</p>
+                <div class="options">
+                    <button class="option-btn" data-value="yes">Sí</button>
+                    <button class="option-btn" data-value="no">No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Decision Context -->
+        <div id="screen-decision-context" class="screen">
+            <div class="question-container">
+                <h2>¿Cómo se utilizará el resultado?</h2>
+                <div class="options">
+                    <button class="option-btn" data-value="human">Análisis humano</button>
+                    <button class="option-btn" data-value="business">Decisión de negocio</button>
+                    <button class="option-btn" data-value="automated">Decisión automática</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Cost of Error -->
+        <div id="screen-cost-error" class="screen">
+            <div class="question-container">
+                <h2>Si el modelo se equivoca, ¿qué ocurre?</h2>
+                <div class="options">
+                    <button class="option-btn" data-value="low">Sin impacto relevante</button>
+                    <button class="option-btn" data-value="moderate">Impacto significativo</button>
+                    <button class="option-btn" data-value="critical">Impacto crítico</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Data Situation -->
+        <div id="screen-data-situation" class="screen">
+            <div class="question-container">
+                <h2>Situación de los datos</h2>
+
+                <div class="form-group">
+                    <label>¿Conoce la variable objetivo?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="target_known" value="yes" required>
+                            <span>Sí</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="target_known" value="no">
+                            <span>No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tamaño aproximado del conjunto de datos:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="data_size" value="small" required>
+                            <span>Pequeño (&lt;1k filas)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="data_size" value="medium">
+                            <span>Mediano (1k–100k)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="data_size" value="large">
+                            <span>Grande (&gt;100k)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de variables disponibles: <span class="helper-inline">(Seleccione todas las que
+                            apliquen)</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="data_types" value="numeric">
+                            <span>Numéricas</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="data_types" value="categorical">
+                            <span>Categorías</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="data_types" value="text">
+                            <span>Texto</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="data_types" value="time">
+                            <span>Tiempo</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="btn-continue-data" class="continue-btn" disabled>Continuar</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="screen-result" class="screen">
+            <div class="result-container">
+                <p class="disclaimer">Esta herramienta no reemplaza el modelado. Estructura el razonamiento previo.</p>
+
+                <h2>Diagnóstico</h2>
+
+                <div class="result-section">
+                    <p id="result-summary" class="summary-text"></p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Interpretación del problema</h3>
+                    <p id="result-learning-type"></p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Estrategia de modelado</h3>
+                    <ul id="result-models"></ul>
+                </div>
+
+                <div class="result-section">
+                    <h3>Métricas recomendadas</h3>
+                    <ul id="result-metrics"></ul>
+                </div>
+
+                <div class="result-section">
+                    <h3>Riesgos detectados</h3>
+                    <ul id="result-risks"></ul>
+                </div>
+
+                <div class="result-section">
+                    <h3>Estrategia de validación</h3>
+                    <p id="result-validation"></p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Próximos pasos</h3>
+                    <ul id="result-next-steps"></ul>
+                </div>
+
+                <button id="btn-restart" class="continue-btn">Comenzar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
