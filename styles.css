@@ -1,27 +1,38 @@
 /* Ultra-Premium Design System - 'Futuristic Glass' */
 :root {
-    /* Dynamic Mesh Palette */
-    --gradient-mesh-1: #667eea;
-    --gradient-mesh-2: #764ba2;
-    --gradient-mesh-3: #6B8DD6;
-    --gradient-mesh-4: #8E37D7;
+    /* Dynamic Mesh Palette - Richer/Deeper per concept */
+    --gradient-mesh-1: #4338ca;
+    /* Indigo 700 */
+    --gradient-mesh-2: #7c3aed;
+    /* Violet 600 */
+    --gradient-mesh-3: #2563eb;
+    /* Blue 600 */
+    --gradient-mesh-4: #c026d3;
+    /* Fuchsia 600 */
 
     /* Glassmorphism Ultra */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.6);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-    --glass-blur: blur(20px) saturate(180%);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    /* Slightly more translucent */
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    --glass-blur: blur(24px) saturate(180%);
 
     /* Colors */
-    --color-text-primary: #111827;
-    --color-text-secondary: #4b5563;
-    --color-accent: #4F46E5;
-    --color-accent-glow: rgba(79, 70, 229, 0.4);
+    --color-text-primary: #0f172a;
+    /* Slate 900 */
+    --color-text-secondary: #334155;
+    /* Slate 700 */
+    --color-accent: #3b82f6;
+    /* Blue 500 */
+    --color-accent-glow: rgba(59, 130, 246, 0.6);
+    --color-cyan-glow: #06b6d4;
+    /* Cyan 500 */
 
     /* Layout */
     --max-width: 640px;
     --radius-lg: 24px;
-    --radius-md: 12px;
+    --radius-md: 16px;
+    /* Pill-like rounded corners */
 }
 
 * {
@@ -40,7 +51,8 @@ body {
     align-items: center;
     padding: 2rem 1rem;
     overflow-x: hidden;
-    background-color: #f3f4f6;
+    background-color: #0f172a;
+    /* Dark base for glow */
 }
 
 /* Animated Background Mesh */
@@ -51,11 +63,13 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.6) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(118, 75, 162, 0.6) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(142, 55, 215, 0.3) 0%, transparent 60%);
-    filter: blur(60px);
-    animation: meshMove 20s ease-in-out infinite alternate;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.4) 0%, transparent 50%);
+    filter: blur(80px);
+    /* Smooth diffusion */
+    animation: meshMove 15s ease-in-out infinite alternate;
 }
 
 @keyframes meshMove {
@@ -64,7 +78,7 @@ body {
     }
 
     100% {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
 }
 
@@ -75,53 +89,60 @@ body {
     z-index: 1;
 }
 
-/* Progress Bar */
+/* Progress Bar - Concept: Thin with Cyan Glow */
 .progress-bar-container {
     position: absolute;
-    top: -30px;
-    left: 10%;
-    width: 80%;
+    top: 6rem;
+    /* Integrated visually near top of card */
+    left: 2rem;
+    width: calc(100% - 4rem);
     height: 4px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
-    overflow: hidden;
+    overflow: visible;
+    /* Allowing glow spill */
+    z-index: 10;
     transition: opacity 0.3s ease;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: var(--color-accent);
+    background: var(--color-cyan-glow);
     width: 0%;
+    border-radius: 4px;
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 10px var(--color-accent-glow);
+    box-shadow: 0 0 15px var(--color-cyan-glow);
+    /* Cyan Glow */
 }
 
 header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 header h1 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: -0.05em;
-    background: linear-gradient(135deg, #111827 0%, #4B5563 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+    /* Clean white for contrast against deep mesh */
     margin-bottom: 0.25rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
 .subtitle {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .screen {
     display: none;
-    animation: fadeSlide 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation: fadeSlide 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .screen.active {
@@ -131,7 +152,7 @@ header h1 {
 @keyframes fadeSlide {
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.98);
+        transform: translateY(40px) scale(0.95);
     }
 
     to {
@@ -140,7 +161,7 @@ header h1 {
     }
 }
 
-/* Ultra Glass Cards */
+/* Ultra Glass Cards - The "Translucent White Glass Card" */
 .question-container,
 .result-container,
 .landing-container {
@@ -150,12 +171,15 @@ header h1 {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -1px rgba(0, 0, 0, 0.03),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-    padding: 3rem;
+        0 20px 40px -10px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    padding: 3.5rem 2.5rem 2.5rem;
+    /* Top padding for progress bar space */
+    position: relative;
+    overflow: hidden;
 }
 
+/* Header Text Inside Card */
 h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.8rem;
@@ -163,7 +187,9 @@ h2 {
     color: var(--color-text-primary);
     margin-bottom: 2rem;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    text-align: center;
+    /* Centered like concept */
 }
 
 h3 {
@@ -171,186 +197,80 @@ h3 {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #9CA3AF;
+    color: #64748b;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-/* Interactive Form Elements */
+/* Interactive Form Elements - Sub-Cards */
 .form-group {
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1.5rem;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    transition: transform 0.2s ease;
-}
-
-.form-group:hover {
-    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
 }
 
 .form-group label {
-    display: block;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--color-text-primary);
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
 }
 
 .radio-group,
 .checkbox-group {
+    display: flex;
+    /* Flex for pill row logic if needed, but grid is safer for responsiveness */
     display: grid;
-    gap: 1rem;
-    /* Responsive grid: 1 col on small, auto-fit on wider if space permits */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 
-/* Custom Controls Container */
+/* Custom Controls - Pill Shaped */
 .radio-label,
 .checkbox-label {
-    display: flex;
-    align-items: center;
-    padding: 1.25rem;
-    cursor: pointer;
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    /* Clearer border */
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    /* Pill shape */
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+    justify-content: center;
+    /* Center content */
 }
 
 .radio-label:hover,
 .checkbox-label:hover {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.15);
+    /* Blue glow */
     border-color: var(--color-accent);
 }
 
-/* Hide Native Inputs */
-.radio-label input,
-.checkbox-label input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-/* Custom Checkmark/Radio logic */
 .radio-label span,
 .checkbox-label span {
-    margin-left: 2.25rem;
-    /* More space */
-    font-weight: 500;
-    font-size: 1rem;
-    color: var(--color-text-primary);
+    margin-left: 0.5rem;
+    /* Tighter for pills */
 }
 
-/* Create Custom Indicators */
+/* Custom Indicators (Hide for sleek look? No, keep for clarity but minimal) */
+/* Moving indicator to left but minimal */
 .radio-label::before,
 .checkbox-label::before {
-    content: '';
-    position: absolute;
-    left: 1.25rem;
-    height: 1.25rem;
-    width: 1.25rem;
-    background-color: #f3f4f6;
-    border: 2px solid #d1d5db;
-    /* Visible border */
-    transition: all 0.3s ease;
+    left: 0.75rem;
 }
 
-/* Radio Specific */
-.radio-label::before {
-    border-radius: 50%;
+.radio-label span,
+.checkbox-label span {
+    margin-left: 2rem;
 }
 
-/* Checkbox Specific */
-.checkbox-label::before {
-    border-radius: 6px;
-}
 
-/* Checked State - Container */
-.radio-label:has(input:checked),
-.checkbox-label:has(input:checked) {
-    background: #fff;
-    border-color: var(--color-accent);
-    box-shadow: 0 4px 12px var(--color-accent-glow);
-}
-
-/* Checked State - Text */
-.radio-label:has(input:checked) span,
-.checkbox-label:has(input:checked) span {
-    color: var(--color-accent);
-    /* Highlight text too */
-    font-weight: 700;
-}
-
-/* Checked State - Indicator Background */
-.radio-label:has(input:checked)::before,
-.checkbox-label:has(input:checked)::before {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
-/* Radio Inner Dot */
-.radio-label:has(input:checked)::after {
-    content: '';
-    position: absolute;
-    left: 1.58rem;
-    /* Center relative to 1.25rem before at 1.25rem left. Math: 1.25 + 0.625 - 0.3 = ~1.575 */
-    top: calc(50% - 0.3rem);
-    width: 0.6rem;
-    height: 0.6rem;
-    background: white;
-    border-radius: 50%;
-    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Checkbox Checkmark */
-.checkbox-label:has(input:checked)::after {
-    content: '';
-    position: absolute;
-    left: 1.65rem;
-    top: calc(50% - 0.4rem);
-    width: 0.4rem;
-    height: 0.8rem;
-    border: solid white;
-    border-width: 0 2.5px 2.5px 0;
-    transform: rotate(45deg);
-    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: scale(0) rotate(45deg);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(45deg);
-    }
-}
-
-/* Helper Text Style */
-.helper-inline {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.9em;
-    font-weight: 400;
-    color: var(--color-text-secondary);
-    opacity: 0.8;
-}
-
-/* Interactive Options */
+/* Interactive Options - Vertical Grid */
 .options {
     display: grid;
     gap: 1rem;
@@ -359,49 +279,59 @@ h3 {
 .option-btn {
     width: 100%;
     padding: 1.25rem 1.5rem;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--color-text-primary);
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    /* Translucent white glass */
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: var(--radius-md);
+    /* Smooth rounded corners */
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: left;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    /* Centered text for button feel */
     backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
 }
 
 .option-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
     border-color: var(--color-accent);
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    /* Blue Glow */
+    color: var(--color-accent);
 }
 
 .option-btn:active {
     transform: scale(0.98);
 }
 
-/* Shimmer Button */
+/* Shimmer Button - Wide */
 .continue-btn {
     width: 100%;
     padding: 1.25rem;
-    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-size: 1.15rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
     color: white;
-    background: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent), #7c3aed);
+    /* Blue to Violet */
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px 0 var(--color-accent-glow);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
     position: relative;
     overflow: hidden;
 }
 
 .continue-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.6);
 }
 
 .continue-btn::after {
@@ -411,7 +341,7 @@ h3 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: 0.5s;
 }
 
@@ -420,37 +350,39 @@ h3 {
 }
 
 .continue-btn:disabled {
-    background: #E5E7EB;
-    color: #9CA3AF;
+    background: rgba(203, 213, 225, 0.5);
+    color: #94a3b8;
     box-shadow: none;
     cursor: not-allowed;
 }
 
-/* Results Area */
+/* Results Polish */
 .summary-text {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: 1.6;
     color: var(--color-text-primary);
     font-weight: 500;
     padding: 1.5rem;
-    background: rgba(79, 70, 229, 0.05);
-    border-left: 4px solid var(--color-accent);
-    border-radius: 0 12px 12px 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
 .result-section ul li {
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
     margin-bottom: 0.75rem;
     position: relative;
     color: var(--color-text-secondary);
+    font-size: 1.05rem;
 }
 
 .result-section ul li::before {
     content: "•";
     color: var(--color-accent);
     position: absolute;
-    left: 0;
+    left: 0.5rem;
     font-weight: bold;
     font-size: 1.5rem;
     line-height: 1;
@@ -465,10 +397,10 @@ h3 {
 
     .question-container,
     .result-container {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 }
