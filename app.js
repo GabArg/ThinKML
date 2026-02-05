@@ -108,6 +108,25 @@ function showScreen(screenId) {
         screen.classList.remove('active');
     });
     document.getElementById(screenId).classList.add('active');
+
+    // Update Progress Bar
+    const progressMap = {
+        'screen-landing': 0,
+        'screen-outcome-type': 20,
+        'screen-clarify-target': 25,
+        'screen-decision-context': 45,
+        'screen-cost-error': 70,
+        'screen-data-situation': 90,
+        'screen-result': 100
+    };
+
+    const progress = progressMap[screenId] || 0;
+    const bar = document.getElementById('progress-bar');
+    if (bar) {
+        bar.style.width = `${progress}%`;
+        // Hide bar on landing
+        bar.parentElement.style.opacity = screenId === 'screen-landing' ? '0' : '1';
+    }
 }
 
 function resetState() {
