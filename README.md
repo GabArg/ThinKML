@@ -1,43 +1,43 @@
-# 🧠 ThinkML
+# ThinkML
 
-**Asistente Inteligente para Definir el Enfoque de Modelado**
+**Asistente para definir el enfoque de modelado**
 
 ![Status](https://img.shields.io/badge/Status-Activo-success)
 ![Version](https://img.shields.io/badge/Versión-1.0.0-blue)
 ![License](https://img.shields.io/badge/Licencia-MIT-lightgrey)
 
+Herramienta orientada a estructurar decisiones de modelado en proyectos reales de datos.
+
+## Demo en vivo
+[Ver Demo (GitHub Pages)](https://gabarg.github.io/ThinKML/)
+
 ---
 
-**ThinkML** es una herramienta interactiva diseñada para ayudar a científicos de datos, analistas y estudiantes a identificar el enfoque correcto de machine learning **antes** de escribir una sola línea de código.
+## Propósito
 
-## 🚀 ¿Por qué existe?
+Muchos proyectos de machine learning fallan no por limitaciones algorítmicas, sino por una definición deficiente del problema. **ThinkML** estructura el razonamiento crítico necesario para alinear objetivos de negocio con la estrategia técnica adecuada.
 
-> *"Un problema bien planteado es un problema medio resuelto."*
+Esta herramienta no ejecuta modelos; organiza el pensamiento previo a la implementación.
 
-Muchos proyectos de ciencia de datos fallan no por la elección del algoritmo, sino por una **definición deficiente del problema**. ThinkML estructura el proceso de razonamiento crítico necesario para alinear los objetivos de negocio con la estrategia técnica.
-
-## ✨ Características Principales
+## Capacidades
 
 | Función | Descripción |
 | :--- | :--- |
-| 🎯 **Clarificación del Problema** | Identifica si necesitas regresión, clasificación, clustering, etc. |
-| 🛠️ **Estrategia Recomendada** | Sugiere familias de modelos y métricas de evaluación específicas. |
-| ⚠️ **Detección de Riesgos** | Señala posibles peligros (leakage, sobreajuste) antes de implementar. |
-| ✅ **Próximos Pasos** | Genera una lista de verificación accionable y determinística. |
+| **Diagnóstico del Problema** | Clasifica la necesidad analítica (regresión, clasificación, series temporales, etc). |
+| **Estrategia Técnica** | Sugiere familias de modelos y métricas de evaluación específicas para el caso. |
+| **Análisis de Riesgos** | Detecta posibles puntos de fallo (estacionalidad, desbalance, leakage) antes de escribir código. |
+| **Plan de Acción** | Genera una lista de verificación determinística para la etapa de implementación. |
 
-## 🚫 Qué NO es ThinkML
+## En qué contexto es útil
 
-Es vital entender el alcance de esta herramienta para usarla correctamente:
+*   **Definición inicial de proyectos de datos**: Para alinear expectativas entre stakeholders y equipo técnico.
+*   **Entrevistas técnicas**: Como marco de referencia para evaluar capacidad de planteo de problemas.
+*   **Discusiones de estrategia analítica**: Para validar hipótesis antes de invertir recursos en desarrollo.
+*   **Validación de enfoque antes de implementar**: Checklist de seguridad para evitar errores conceptuales costosos.
 
-- ❌ **No es AutoML**: No entrena modelos por ti.
-- ❌ **No es un procesador de datos**: No se cargan datasets (CSV, Excel).
-- ❌ **No es magia**: No reemplaza el criterio del experto, lo potencia.
+## Estructura del Proyecto
 
-*Esta herramienta organiza el pensamiento, no ejecuta el código.*
-
-## 📂 Estructura del Proyecto
-
-El proyecto es **100% Client-Side** (HTML/CSS/JS puro), lo que garantiza privacidad total y cero dependencias.
+Arquitectura 100% Client-Side sin dependencias externas, garantizando privacidad y portabilidad.
 
 ```mermaid
 graph TD;
@@ -45,22 +45,10 @@ graph TD;
     index.html-->styles.css;
 ```
 
-- `index.html`: Estructura semántica y contenido.
-- `styles.css`: Diseño académico limpio y responsivo.
-- `app.js`: Motor de diagnóstico y lógica de estado.
-
-## 💻 Cómo Usar
-
-1.  **Clonar el repositorio**:
-    ```bash
-    git clone https://github.com/GabArg/ThinKML.git
-    ```
-2.  **Abrir**: Haz doble clic en `index.html` en tu navegador favorito.
-3.  **Navegar**: Sigue el asistente paso a paso para obtener tu diagnóstico.
-
-## 🔗 Demo
-
-[Ver Demo en Vivo](https://gabarg.github.io/ThinKML/) *(Enlace pendiente de configuración en GitHub Pages)*
+- `app.js`: Motor de inferencia basado en reglas determinísticas.
+- `index.html`: Estructura semántica y flujo de interfaz.
+- `styles.css`: Sistema de diseño minimalista orientado a la legibilidad.
 
 ---
-Hecho con 💙 para la comunidad de Data Science.
+
+**ThinkML** — *Razonamiento estructurado para ciencia de datos.*
