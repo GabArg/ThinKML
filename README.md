@@ -56,6 +56,8 @@ El sistema utiliza **reglas deterministas** para mapear características del pro
 
 > *El objetivo no es reemplazar al analista, sino hacer explícito el razonamiento previo al modelado.*
 
+La herramienta implementa estas decisiones mediante un motor determinista de reglas que produce diagnósticos reproducibles.
+
 ## 🚫 Qué NO es
 
 *   🚫 No carga datasets
@@ -75,3 +77,12 @@ Hecho con 💙 para la comunidad de Data Science.
 El objetivo de ThinkML no es automatizar el análisis, sino hacer explícito el razonamiento que normalmente permanece implícito en la experiencia de un analista.
 
 El proyecto surge de la necesidad de estructurar decisiones de modelado antes de la implementación, especialmente en etapas tempranas de un proyecto o en contextos de discusión técnica.
+
+## Qué demuestra este proyecto
+
+Este proyecto refleja la capacidad de:
+
+* Traducir un problema difuso en una estructura analítica clara
+* Definir estrategias de modelado antes de implementar
+* Evaluar riesgos metodológicos de forma sistemática
+* Comunicar decisiones técnicas sin depender del código
