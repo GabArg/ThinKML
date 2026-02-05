@@ -69,3 +69,9 @@ El sistema utiliza **reglas deterministas** para mapear características del pro
 
 ---
 Hecho con 💙 para la comunidad de Data Science.
+
+## Motivación
+
+El objetivo de ThinkML no es automatizar el análisis, sino hacer explícito el razonamiento que normalmente permanece implícito en la experiencia de un analista.
+
+El proyecto surge de la necesidad de estructurar decisiones de modelado antes de la implementación, especialmente en etapas tempranas de un proyecto o en contextos de discusión técnica.
